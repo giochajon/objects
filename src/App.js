@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import MathComp from './components/MathComp.js';
 import IconBar from './components/IconBar.js';
+import Iconicos from './components/Iconicos.js';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <MathComp />
-        <IconBar />
+        <Iconicos />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
            
