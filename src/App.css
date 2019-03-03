@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.square {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
 }
 
 .App-logo {
@@ -7,6 +18,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+
+
 
 .App-header {
   background-color: #282c34;

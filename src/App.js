@@ -9,9 +9,9 @@ class App extends Component {
       <div className="App">
          
 
-        
+        <MyMenu /> 
         <header className="App-header">
-        <MyMenu />   
+          
          
         </header>
       </div>
