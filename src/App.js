@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import MathComp from './components/MathComp.js';
-import IconBar from './components/IconBar.js';
-import Iconicos from './components/Iconicos.js';
 import './App.css';
+import MyMenu from "./components/MyMenu"
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <MathComp />
-        <Iconicos />
+         
+
+        
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-           
-            
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <MyMenu />   
+         
         </header>
       </div>
     );
