@@ -16,7 +16,7 @@ function multiply(a,b) {
 function divide(a,b) {
 	const f = (a/b);
 	return f; 
-	return 0; 
+	 
 }
 
 

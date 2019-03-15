@@ -1,5 +1,5 @@
 import React from "react";
-//import math from "./math"
+import math from "./math"
 import TogOper from "./TogOper";
 
 class MathComp extends React.Component {
@@ -15,6 +15,8 @@ class MathComp extends React.Component {
 		};
 	}
 
+
+
 	handleChangeFirst = event => {
 		this.setState({ firstnum: event.target.value });
 	};
@@ -28,22 +30,23 @@ class MathComp extends React.Component {
 		const a = Number(this.state.firstnum);
 		const b = Number(this.state.secondnum);
 		let c = 0;
-
+		//console.log ("desde oper", this.refs.math.sum(1,2))
 		switch (this.state.oper) {
 			case "sum":
-				c = a + b;
+				//c = a + b;
+				c = math.sum(a,b);
 				this.setState({ oper: "subs" });
 				break;
 			case "subs":
-				c = a - b;
+				c = math.substract(a,b);
 				this.setState({ oper: "multi" });
 				break;
 			case "multi":
-				c = a * b;
+				c = math.multiply(a,b);
 				this.setState({ oper: "divi" });
 				break;
 			case "divi":
-				c = a / b;
+				c = math.divide(a,b);
 				this.setState({ oper: "sum" });
 				break;
 			default:
@@ -52,8 +55,9 @@ class MathComp extends React.Component {
 				break;
 		}
 		this.counter = c;
-		console.log(this.state.oper);
+		//console.log(this.state.oper);
 		// this.setState({ oper: event.target.value });
+		console.log (TogOper.oper)
 	};
 
 	calcTotal = event => {
@@ -84,7 +88,7 @@ class MathComp extends React.Component {
 				break;
 		}
 		this.counter = c;
-		console.log(this.state.oper);
+		//console.log(this.state.oper);
 		this.setState({ kk: event.target.value });
 	};
 
