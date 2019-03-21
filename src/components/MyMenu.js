@@ -3,6 +3,7 @@ import logo from "../logo.svg";
 import IconList from "./IconList";
 import MathComp from "./MathComp";
 import AccountInterface from "./AccountInterface"
+import AccountController from "./AccountController"
 
 function Square(props) {
   return (
@@ -48,6 +49,10 @@ class Menu extends React.Component {
 
       case 2:
         this.setState({ itemSelected: <AccountInterface initialName="Gio" initialBalance="100"  /> });
+        break;
+      
+      case 3:
+        this.setState({ itemSelected: <AccountController /> });
         break;
 
       default:
