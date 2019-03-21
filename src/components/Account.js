@@ -16,11 +16,13 @@ class Account {
 	showBalance(){
 		return(this.balance)
 	}
-	// remder (){
-	// 	return (
-	// 	)
-	// }
 
+	renameAccount(newName){
+		this.name = newName
+	}
+
+
+	
 }
 
 export default Account

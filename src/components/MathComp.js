@@ -15,8 +15,6 @@ class MathComp extends React.Component {
 		};
 	}
 
-
-
 	handleChangeFirst = event => {
 		this.setState({ firstnum: event.target.value });
 	};
@@ -109,7 +107,7 @@ class MathComp extends React.Component {
 					onChange={this.handleChangeSecond}
 				/>
 				<div onClick={this.calcTotal}>
-					<i class="fas fa-equals" />
+					<i className="fas fa-equals" />
 					<div>{this.counter}</div>
 				</div>
 			</div>

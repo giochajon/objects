@@ -1,10 +1,10 @@
 import React from "react";
 
 const imagesPath = {
-  plus: <i class="fas fa-plus" />,
-  minus: <i class="fas fa-minus" />,
-  mult: <i class="fas fa-times" />,
-  divi: <i class="fas fa-divide" />
+  plus: <i className="fas fa-plus" />,
+  minus: <i className="fas fa-minus" />,
+  mult: <i className="fas fa-times" />,
+  divi: <i className="fas fa-divide" />
 };
 
 class TogOper extends React.Component {

@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import logo from "../logo.svg";
 import IconList from "./IconList";
 import MathComp from "./MathComp";
@@ -14,53 +13,46 @@ function Square(props) {
   );
 }
 
-class Board extends React.Component {
+class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(9).fill(null),
-      xIsNext: true
+      squares: Array(5).fill(null),
+      itemSelected: true
     };
   }
 
   handleClick(i) {
-    //const squares = this.state.squares.slice();
-    //alert (i);
-
-    //squares[i] = this.state.xIsNext ? 'X' : 'O';
-    //options for menu:
+   
 
     switch (i) {
       case 0:
         this.setState({
-          xIsNext: (
+          itemSelected: (
             <div>
               <img
-                onMouseOver={() => console.log("Hovered!")}
+                //onMouseOver={() => console.log("Hovered!")}
                 src="https://www.fillmurray.com/200/100"
                 alt="willy"
               />
             </div>
           )
 
-          //        xIsNext: i,
+          //        itemSelected: i,
         });
         break;
 
       case 1:
-        this.setState({ xIsNext: <MathComp /> });
+        this.setState({ itemSelected: <MathComp /> });
         break;
 
       case 2:
-        this.setState({ xIsNext: <AccountInterface initialName="Gio" initialBalance="100"  /> });
+        this.setState({ itemSelected: <AccountInterface initialName="Gio" initialBalance="100"  /> });
         break;
-
-
-
 
       default:
         this.setState({
-          xIsNext: (
+          itemSelected: (
             <div>
               <h2>you pressed button {i}</h2>
 
@@ -70,7 +62,7 @@ class Board extends React.Component {
         });
     }
   }
-  renderSquare(i) {
+  renderMenuItem(i) {
     //console.log ("ite",IconList[i].icon)
     return (
       <Square
@@ -82,16 +74,16 @@ class Board extends React.Component {
   }
 
   render() {
-    let status = this.state.xIsNext;
+    let status = this.state.itemSelected;
 
     return (
       <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
+        <div className="Menu-row">
+          {this.renderMenuItem(0)}
+          {this.renderMenuItem(1)}
+          {this.renderMenuItem(2)}
+          {this.renderMenuItem(3)}
+          {this.renderMenuItem(4)}
         </div>
         {status}
       </div>
@@ -99,24 +91,4 @@ class Board extends React.Component {
   }
 }
 
-class Game extends React.Component {
-  render() {
-    return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
-        </div>
-      </div>
-    );
-  }
-}
-
-// ========================================
-
-ReactDOM.render(<Game />, document.getElementById("root"));
-
-export default Game;
+export default Menu;

@@ -13,10 +13,10 @@
     */ 
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    box-shadow: 3px 3px 5px 6px #ccc;
+    border: .0px solid black;
+    box-shadow: 2px 2px 3px 4px #ccc;
     border-radius: 20px;
-    padding: 1px;
+    padding: 2px;
     background: #334768;
     font-size: 18px;
     width: 200px;
@@ -64,4 +64,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  margin-right: 5px;
+    margin-left: 5px;
+}
+
+p {
+  padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+
+hr {
+      margin-bottom: 3px;
+      margin-top: 3px;
 }
