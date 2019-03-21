@@ -11,6 +11,11 @@ class AccountInterface extends React.Component {
         this.cuenta = new Account(this.state.accountName, this.state.accountBalance)
       //  this.handleDeposit = this.handleDeposit.bind(this);
     }
+/*    componentDidMount() {
+        
+    }
+*/
+
     handleDeposit = event => {
         this.cuenta.deposit(Number(prompt("enter the amount to deposit")))
         this.setState({ accountBalance: this.cuenta.showBalance() });
@@ -21,6 +26,7 @@ class AccountInterface extends React.Component {
         this.cuenta.withdrawl((Number(prompt("enter the amount to withdraw"))))
         this.setState({ accountBalance: this.cuenta.showBalance() });
     };
+
 
 
     render() {

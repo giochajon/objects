@@ -2,7 +2,10 @@
   "name": "objects",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "homepage" : "http://chajon.ca/myapp",
+=======
+>>>>>>> 85b2abdc90a486827f9c47427a5e6f91c228bc62
   "dependencies": {
     "hg": "^0.3.3",
     "react": "^16.8.3",
