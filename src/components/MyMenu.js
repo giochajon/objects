@@ -5,6 +5,7 @@ import MathComp from "./MathComp";
 import AccountInterface from "./AccountInterface"
 import AccountController from "./AccountController"
 
+
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -54,6 +55,8 @@ class Menu extends React.Component {
       case 3:
         this.setState({ itemSelected: <AccountController /> });
         break;
+
+      
 
       default:
         this.setState({

@@ -66,7 +66,7 @@ class AccountInterface extends React.Component {
                     <button onClick={this.handleDeposit}>deposit</button> 
                     <button onClick={this.handleWithdrawl}>withdrawal</button> 
                     <button onClick={this.editName}>{MyVar}</button>
-                   {/* <button onClick={this.handleDelete}>delete</button>*/}
+                    <button onClick= {()=>{this.props.funcDelete(this.props.item)}} >delete</button>
                     </div>
         )
     }
