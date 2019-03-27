@@ -1,16 +1,21 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  //background-image: linear-gradient(#282c34,  #081c3a);
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-
-.Acc {
- /*
+.listAccounts
+{
     display: flex;
     flex-direction: column;
-    */ 
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#282c34, #596577, #081c3a);
+}
+
+.Acc {
     justify-content: center;
     align-items: center;
     border: .0px solid black;

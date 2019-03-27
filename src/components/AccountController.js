@@ -71,8 +71,11 @@ class AccountController extends React.Component {
 					<button onClick={this.handleNewAccount}>
 						Add new Account
 					</button>
+					
 				</div>
+				<div className = "listAccounts">
 				{this.showData()}
+				</div>
 			</div>
         );
     }
