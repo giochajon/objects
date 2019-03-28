@@ -7,11 +7,25 @@ const testCities =[
 		"longitude": "-91.51806W",
 		"population": 4000
 	},
+
 		{
 		"name": "Managuador",
 		"latitude": "51.042421S",
 		"longitude": "-114.075664W",
 		"population": 3000
+	},	
+		{
+		"name": "Braavos",
+		"latitude": "60.83472S",
+		"longitude": "12.66806W",
+		"population": 1000
+	
+		},	
+		{
+		"name": "Kings Landing",
+		"latitude": "30.83472N",
+		"longitude": "80.34806W",
+		"population": 2000
 	}
 	]
 	
@@ -23,5 +37,6 @@ test("testing CityController class & methods: ", () => {
 	expect(obj.whichSphere(obj.cityData[1])).toBe("Southern Hemisphere");
 	expect(obj.getMostNorthern()).toBe("Pelotillehue");
 	expect(obj.getMostSouthern()).toBe("Managuador");
+	expect(obj.getPopulation()).toBe(10000);
 	
 });

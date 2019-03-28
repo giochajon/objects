@@ -29,8 +29,8 @@ class CityController {
 		return t2[0].name;
 	}
 
-	getPopulation(arreglo) {
-		const totPopulation = arreglo.reduce((acum, nextval) => ({
+	getPopulation() {
+		const totPopulation = this.cityData.reduce((acum, nextval) => ({
 			population: acum.population + nextval.population
 		}));
 		return totPopulation.population;
