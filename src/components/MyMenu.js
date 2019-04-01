@@ -4,6 +4,7 @@ import IconList from "./IconList";
 import MathComp from "./MathComp";
 import AccountInterface from "./AccountInterface"
 import AccountController from "./AccountController"
+import CitiesComp from "./CitiesComp"
 
 
 function Square(props) {
@@ -56,6 +57,9 @@ class Menu extends React.Component {
         this.setState({ itemSelected: <AccountController /> });
         break;
 
+case 4:
+        this.setState({ itemSelected: <CitiesComp /> });
+        break;
       
 
       default:
