@@ -16,7 +16,7 @@ class Community {
 			const last = element.latitude.length - 1;
 			return element.latitude[last] === "N";
 		});
-		t2.sort((a, b) => (a.latitude > b.latitude ? 1 : -1));
+		t2.sort((a, b) => (parseInt(a.latitude) < parseInt(b.latitude) ? 1 : -1));
 		return t2[0].name;
 	}
 
@@ -25,7 +25,7 @@ class Community {
 			const last = element.latitude.length - 1;
 			return element.latitude[last] === "S";
 		});
-		t2.sort((a, b) => (a.latitude > b.latitude ? 1 : -1));
+		t2.sort((a, b) => (parseInt(a.latitude) > parseInt(b.latitude) ? 1 : -1));
 		return t2[0].name;
 	}
 
