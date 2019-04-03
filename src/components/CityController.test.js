@@ -35,7 +35,7 @@ test("testing CityController class & methods: ", () => {
 	const obj = new Community(testCities);
 	expect(obj.cityData[1].name).toBe("Managuador");
 	expect(obj.whichSphere(obj.cityData[1])).toBe("Southern Hemisphere");
-	expect(obj.getMostNorthern()).toBe("Pelotillehue");
+	expect(obj.getMostNorthern()).toBe("Kings Landing");
 	expect(obj.getMostSouthern()).toBe("Managuador");
 	expect(obj.getPopulation()).toBe(10000);
 	
