@@ -2,8 +2,8 @@ import React from "react";
 import logo from "../logo.svg";
 import IconList from "./IconList";
 import MathComp from "./MathComp";
-import AccountInterface from "./AccountInterface"
-import AccountController from "./AccountController"
+import AccountInterface from "./AccountInterfaceOld"
+import AccountController from "./AccountControllerInterface"
 import CitiesComp from "./CitiesComp"
 
 

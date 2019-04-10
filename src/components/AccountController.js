@@ -1,84 +1,54 @@
-import React from "react";
-import AccountInterface from "./AccountInterface";
-import myData from "./AccountList.json";
+//import Account from "./Account"
 
-class AccountController extends React.Component {
-    constructor(props) {
-        super(props);
+class AccountController {
 
-        this.state = {
-            arrayData: myData,
-        };
+    constructor() {
+        this.accountList = []
+        this.total = 0;
+        this.highest = 0;
+        this.lowest = 0; 
+
     }
 
-    showData = () => {
-        let lista = [];
-
-        const arr = this.state.arrayData;
-        arr.forEach((element) => {
-            lista.push(
-                <AccountInterface
-					key = {element.name+element.balance}
-					initialName={element.name}
-					initialBalance={element.balance}
-					item = {element}
-					funcDelete = {this.handleDelete}
-				/>
-            );
+chkLowHigh = () => {
+ let accum = 0;
+ this.highest = 0;
+ this.lowest = 999999999999;
+this.accountList.forEach ((element) => {
+          if (this.highest < element.balance) {this.highest = element.balance};  
+        if (this.lowest > element.balance) {this.lowest = element.balance}; 
+         accum += element.balance   
+            
         });
-        return lista;
+this.total = accum;
+//console.log ("total", this.total,  "highest now", this.highest, "lowest now", this.lowest )
+
     }
 
-    handleDelete = (element) => {
-        let arr = this.state.arrayData
-        let result = arr.filter(arr => arr !== element)
-        this.setState({ arrayData: result })
-    };
 
-
-    handleNewAccount = event => {
-        let nuevo = {
-            name: prompt("enter name for the account"),
-            balance: Number(prompt("enter Initial Balance on new account"))
-        }
-        let arr = this.state.arrayData
-        arr.unshift(nuevo)
-        this.setState({ arrayData: arr })
+    addAccount  = (account) => {
+        this.accountList.push (account);
+        
+        this.chkLowHigh();
+        
     }
 
-    accountStatusBar() {
-        let myArray = this.state.arrayData;
-        let higher = 0;
-        let lower = Number(myArray[0].balance);
-        let total = 0;
-        //let valComp = 0;
-        myArray.forEach(function(element) {
-            total += Number(element.balance);
-            //valComp = Number(element.balance)
-            higher = (higher > Number(element.balance)) ? higher : Number(element.balance)
-            lower = (lower < Number(element.balance)) ? lower : Number(element.balance)
+    deleteAccount (whichName) {
+      let a = this.accountList.filter(function(item) {
+  return item.name !== whichName;
+}); 
+      this.accountList = a;
+      this.chkLowHigh();
+    }
+
+    renameAccount(whichName,newName) {
+        this.accountList.forEach ((element) => {
+          
+    if (element.name === whichName) {element.name = newName}        
+            
         });
-        return "Higher: " + higher + " Lower " + lower + " Total  " + total;
+
     }
 
-    render() {
-        return (
-            <div>
-				<div>
-					<h3>Account Controller</h3>
-					{this.accountStatusBar()}
-					<br />
-					<button onClick={this.handleNewAccount}>
-						Add new Account
-					</button>
-					
-				</div>
-				<div className = "listAccounts">
-				{this.showData()}
-				</div>
-			</div>
-        );
-    }
-}
-
-export default AccountController;
+}    
+export default AccountController
