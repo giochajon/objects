@@ -25,6 +25,10 @@ const IconList = [
      {
         id: "4",
         icon: <IosRainy shake={true} fontSize="80px" color="grey" />
+    },
+     {
+        id: "5",
+        icon: <LogoNodejs beat={true} fontSize="80px" color="purple" />
     }
 
 ]

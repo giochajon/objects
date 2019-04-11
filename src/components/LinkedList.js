@@ -11,6 +11,31 @@ class LinkedList {
         this.totalAmmount = Number(node.ammount)
     }
 
+    toArray = () => {
+      let lista =[]
+      let curr = this.current.subject
+      if (this.first == this.last)
+      {
+
+      }
+      else
+       {
+        this.moveFirst();
+        for (let fun = 1; fun < this.numberOfNodes; fun++)
+        {  lista.push("Subject: " + this.current.subject + " Amount: " + this.current.ammount )
+            this.moveNext()
+        }
+        lista.push("Subject: " + this.current.subject + " Amount: " + this.current.ammount ) 
+        
+        }
+        this.moveFirst();
+        for (let fun = 1; fun < this.numberOfNodes; fun++)
+        {  if (this.current.subject !== curr)  {console.log("NO");   this.moveNext()}else{
+            console.log("yes"); break;}
+        }
+        return lista
+      }
+      
 
 
     insertNode = (NewNode) => {

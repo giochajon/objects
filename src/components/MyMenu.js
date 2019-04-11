@@ -5,7 +5,7 @@ import MathComp from "./MathComp";
 import AccountInterface from "./AccountInterfaceOld"
 import AccountController from "./AccountControllerInterface"
 import CitiesComp from "./CitiesComp"
-
+import LinkedListInterface from "./LinkedListInterface"
 
 function Square(props) {
   return (
@@ -61,6 +61,9 @@ case 4:
         this.setState({ itemSelected: <CitiesComp /> });
         break;
       
+case 5:
+        this.setState({ itemSelected: <LinkedListInterface /> });
+        break;
 
       default:
         this.setState({
@@ -96,6 +99,7 @@ case 4:
           {this.renderMenuItem(2)}
           {this.renderMenuItem(3)}
           {this.renderMenuItem(4)}
+          {this.renderMenuItem(5)}
         </div>
         {status}
       </div>
