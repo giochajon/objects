@@ -135,7 +135,7 @@ class AccountInterface extends React.Component {
                     placeholder="Name"
                 /> 
                 <input
-                    type="text"
+                    type="number"
                     value={this.state.newAccountBalance}
                     onChange={this.handleChangeBalance}
                     placeholder="Inital Balance"

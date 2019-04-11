@@ -12,30 +12,32 @@ class LinkedList {
     }
 
     toArray = () => {
-      let lista =[]
-      let curr = this.current.subject
-      if (this.first == this.last)
-      {
+        let lista = []
+        let curr = this.current.subject
+        if (this.first === this.last) {
 
-      }
-      else
-       {
-        this.moveFirst();
-        for (let fun = 1; fun < this.numberOfNodes; fun++)
-        {  lista.push("Subject: " + this.current.subject + " Amount: " + this.current.ammount )
-            this.moveNext()
-        }
-        lista.push("Subject: " + this.current.subject + " Amount: " + this.current.ammount ) 
-        
+        } else {
+            this.moveFirst();
+            for (let fun = 1; fun < this.numberOfNodes; fun++) {
+                lista.push("Subject: " + this.current.subject + " Amount: " + this.current.ammount)
+                this.moveNext()
+            }
+            lista.push("Subject: " + this.current.subject + " Amount: " + this.current.ammount)
+
         }
         this.moveFirst();
-        for (let fun = 1; fun < this.numberOfNodes; fun++)
-        {  if (this.current.subject !== curr)  {console.log("NO");   this.moveNext()}else{
-            console.log("yes"); break;}
+        for (let fun = 1; fun < this.numberOfNodes; fun++) {
+            if (this.current.subject !== curr) {
+                console.log("NO");
+                this.moveNext()
+            } else {
+                console.log("yes");
+                break;
+            }
         }
         return lista
-      }
-      
+    }
+
 
 
     insertNode = (NewNode) => {
@@ -69,25 +71,45 @@ class LinkedList {
     }
 
     moveNext = () => {
-        this.current = this.current.forwardNode
+        if (this.current !== this.last) { this.current = this.current.forwardNode }
 
     }
 
     movePrev = () => {
-        this.current = this.current.previousNode
+        if (this.current !== this.first) { this.current = this.current.previousNode }
 
     }
 
 
 
     deleteNode = () => {
-    	this.totalAmmount -= this.current.ammount;
-    	this.numberOfNodes--;
-        this.current.previousNode.forwardNode = this.current.forwardNode
-        this.current.forwardNode.previousNode = this.current.previousNode
-        this.movePrev()
-    }
 
+        if (this.current === this.first) {
+            this.totalAmmount -= this.current.ammount;
+            this.numberOfNodes--;
+            this.moveNext()
+            this.first = this.current;
+            this.current.previousNode = null
+
+            console.log("mia", this.current.subject)
+        } else if (this.current === this.last) {
+
+            this.totalAmmount -= this.current.ammount;
+            this.numberOfNodes--;
+            this.current.previousNode.forwardNode = null
+            //this.current.forwardNode.previousNode = this.current.previousNode
+            this.movePrev()
+            this.last = this.current;
+
+        } else if ((this.current !== this.last)||(this.current !== this.first)) {
+            this.totalAmmount -= this.current.ammount;
+            this.numberOfNodes--;
+            this.current.previousNode.forwardNode = this.current.forwardNode
+            this.current.forwardNode.previousNode = this.current.previousNode
+            this.movePrev()
+        }
+
+    }
 }
 
 

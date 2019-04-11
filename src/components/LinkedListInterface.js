@@ -7,109 +7,127 @@ class LinkedListInterface extends React.Component {
         super(props);
 
         this.state = {
-            newNodeSubject : null,
-            newNodeAmmount : null,
-            numberOfNodes: 0
+            newNodeSubject: null,
+            newNodeAmmount: null,
+            numberOfNodes: 0,
+            current: null
         };
         this.controller = null
     }
 
 
-	handleNewNodeSubject = (event) => {
+    handleNewNodeSubject = (event) => {
         this.setState({ newNodeSubject: event.target.value });
     }
 
-	handleNewNodeBalance = (event) => {
+    handleNewNodeBalance = (event) => {
         this.setState({ newNodeAmmount: event.target.value });
     }
 
     addNewNode = () => {
         let newNode = new node(this.state.newNodeSubject, this.state.newNodeAmmount)
         this.controller == null ? this.controller = new LinkedList(newNode) : this.controller.insertNode(newNode)
-       
+
         this.setState({ newNodeSubject: "" });
-         this.setState({ newNodeAmmount: "" });
-         this.setState({ numberOfNodes: this.controller.numberOfNodes });
-         //console.log (this.controller)
+        this.setState({ newNodeAmmount: "" });
+        this.setState({ numberOfNodes: this.controller.numberOfNodes });
+        //console.log (this.controller)
     }
 
-    showCurrInfo= () => {
-    	//console.log (this.controller)
-    	return (<div>
+    showCurrInfo = () => {
+        //console.log (this.controller)
+        //this.setState({ current: this.controller.current.subject });
+        return (<div>
+          
+          <p>Current Node:  {this.controller.current.subject} </p>
+          
+          <button onClick={() => { this.movePrev() }}>Prev</button>
+          <button onClick={() => { this.moveNext() }}>Next</button>
+          <button onClick={() => { this.delNode() }}>delete</button>
+          </div>
 
-    			<p>Current Node: </p> {this.controller.current.subject}
+        )
+    }
 
-    			</div>
+    delNode = () => {
+        this.controller.deleteNode()
 
-    		)
-    	}
+        this.setState({ current: this.controller.current.subject })
+    }
 
-    showNodeList= () => {
-    	let lista = [];
 
-         let myCurr = this.controller.current.name
+    movePrev = () => {
+        this.controller.movePrev()
+        this.setState({ current: this.controller.current.subject })
+    }
 
-         this.controller.moveFirst()
-         while (this.controller.current.forwardNode !== this.controller.current)
-         {
+    moveNext = () => {
+        this.controller.moveNext()
+        this.setState({ current: this.controller.current.subject })
+    }
 
-         	lista.push (<div> Subject: {this.controller.current.subject} Ammount: {this.controller.current.ammount}   </div> )
-         	this.controller.moveNext()
-         	          } 
+
+
+    showNodeList = () => {
+        let lista = [];
+
+        let datarray = this.controller.toArray()
+
+        datarray.forEach((element) => {
+
+            lista.push(<div> {element} </div>)
+
+        })
         return lista
     }
 
 
 
 
-    
+
 
 
     render() {
-    	let currNode = null
-    	let lista = null
-        if (this.controller == null) {}
-        else {currNode = this.showCurrInfo()
-        	 	lista = null//this.showNodeList()
-        	 	
-        	 	//console.log (this.controller.current.forwardNode === this.controller.current)
-        	 	 }
+        let currNode = null
+        let lista = null
+        if (this.controller == null) {} else {
+            currNode = this.showCurrInfo()
+            lista = this.showNodeList()
+
+            //console.log (this.controller.current.forwardNode === this.controller.current)
+        }
 
 
         return (
-        <div> 
+            <div> 
 
-           	<div className="Acc"> 
-        	<p>New Node</p> 
-        	              <input
+            <div className="cityCard"> 
+          <p>New Node</p> 
+                        <input
                     type="text"
                     value={this.state.newNodeSubject}
                     onChange={this.handleNewNodeSubject}
                     placeholder="Subject"
                 /> 
                 <input
-                    type="text"
+                    type="number"
                     value={this.state.newNodeAmmount}
                     onChange={this.handleNewNodeBalance}
                     placeholder="Ammount"
                 />
-              <button onClick={() => {
-                        //this.props.funcMoveIn(this.props.name);
-                       //alert('miau')
-                       this.addNewNode()
-                    }}
-
-
-              >Add Node</button>
+              <button onClick={() => { this.addNewNode() }}>Add Node</button>
 
               <p>Number of Nodes: {this.state.numberOfNodes}  </p>
-              {currNode}
-        	</div>
-        	{lista}
-			<div > 
-			
 
-			</div>
+              
+              {currNode}
+              
+          </div>
+          {lista}
+      <div > 
+      
+
+      </div>
 
 
 
