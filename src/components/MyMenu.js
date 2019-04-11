@@ -8,91 +8,91 @@ import CitiesComp from "./CitiesComp"
 import LinkedListInterface from "./LinkedListInterface"
 
 function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
+    return (
+        <button className="square" onClick={props.onClick}>
       {props.ico}
       {props.value}
     </button>
-  );
+    );
 }
 
 class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(5).fill(null),
-      itemSelected: true
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(5).fill(null),
+            itemSelected: true
+        };
+    }
 
-  handleClick(i) {
-   
+    handleClick(i) {
 
-    switch (i) {
-      case 0:
-        this.setState({
-          itemSelected: (
-            <div>
+
+        switch (i) {
+            case 0:
+                this.setState({
+                    itemSelected: (
+                        <div>
               <img
                 //onMouseOver={() => console.log("Hovered!")}
                 src="https://www.fillmurray.com/200/100"
                 alt="willy"
               />
             </div>
-          )
+                    )
 
-          //        itemSelected: i,
-        });
-        break;
+                    //        itemSelected: i,
+                });
+                break;
 
-      case 1:
-        this.setState({ itemSelected: <MathComp /> });
-        break;
+            case 1:
+                this.setState({ itemSelected: <MathComp /> });
+                break;
 
-      case 2:
-        this.setState({ itemSelected: <AccountInterface initialName="Gio" initialBalance="100"  /> });
-        break;
-      
-      case 3:
-        this.setState({ itemSelected: <AccountController /> });
-        break;
+            case 2:
+                this.setState({ itemSelected: <AccountInterface initialName="Gio" initialBalance="100"  /> });
+                break;
 
-case 4:
-        this.setState({ itemSelected: <CitiesComp /> });
-        break;
-      
-case 5:
-        this.setState({ itemSelected: <LinkedListInterface /> });
-        break;
+            case 3:
+                this.setState({ itemSelected: <AccountController /> });
+                break;
 
-      default:
-        this.setState({
-          itemSelected: (
-            <div>
+            case 4:
+                this.setState({ itemSelected: <CitiesComp /> });
+                break;
+
+            case 5:
+                this.setState({ itemSelected: <LinkedListInterface /> });
+                break;
+
+            default:
+                this.setState({
+                    itemSelected: (
+                        <div>
               <h2>you pressed button {i}</h2>
 
               <img src={logo} className="App-logo" alt="logo" />
             </div>
-          )
-        });
+                    )
+                });
+        }
     }
-  }
-  renderMenuItem(i) {
-    //console.log ("ite",IconList[i].icon)
-    return (
-      <Square
+    renderMenuItem(i) {
+        //console.log ("ite",IconList[i].icon)
+        return (
+            <Square
         value={this.state.squares[i]}
         ico={IconList[i].icon}
         onClick={() => this.handleClick(i)}
       />
-    );
-  }
+        );
+    }
 
-  render() {
-    let status = this.state.itemSelected;
+    render() {
+        let status = this.state.itemSelected;
 
-    return (
-      <div>
+        return (
+            <div>
         <div className="Menu-row">
           {this.renderMenuItem(0)}
           {this.renderMenuItem(1)}
@@ -103,8 +103,8 @@ case 5:
         </div>
         {status}
       </div>
-    );
-  }
+        );
+    }
 }
 
 export default Menu;

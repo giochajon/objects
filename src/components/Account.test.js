@@ -9,4 +9,6 @@ test('testing account class & methods: ', () => {
 	obj.withdrawl(30)
 	expect(obj.balance).toBe(5)
 	expect(obj.showBalance()).toBe(5)
+	obj.renameAccount("Mike")
+	expect(obj.name).toBe('Mike')
 })
