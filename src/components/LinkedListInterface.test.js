@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-
+import LinkedListInterface from "./LinkedListInterface"
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<LinkedListInterface />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-

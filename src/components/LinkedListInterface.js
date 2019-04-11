@@ -105,13 +105,13 @@ class LinkedListInterface extends React.Component {
           <p>New Node</p> 
                         <input
                     type="text"
-                    value={this.state.newNodeSubject}
+                    value={this.state.newNodeSubject || ''}
                     onChange={this.handleNewNodeSubject}
                     placeholder="Subject"
                 /> 
                 <input
                     type="number"
-                    value={this.state.newNodeAmmount}
+                    value={this.state.newNodeAmmount || ''}
                     onChange={this.handleNewNodeBalance}
                     placeholder="Ammount"
                 />

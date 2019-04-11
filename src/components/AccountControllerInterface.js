@@ -3,8 +3,8 @@ import Account from "./Account";
 import AccountController from "./AccountController"
 
 class AccountInterface extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
 
         this.state = {
             newAccountName: null,
@@ -130,13 +130,13 @@ class AccountInterface extends React.Component {
              <p>New Account: </p> 
               <input
                     type="text"
-                    value={this.state.newAccountName}
+                    value={this.state.newAccountName|| ''}
                     onChange={this.handleChangeName}
                     placeholder="Name"
                 /> 
                 <input
                     type="number"
-                    value={this.state.newAccountBalance}
+                    value={this.state.newAccountBalance || ''}
                     onChange={this.handleChangeBalance}
                     placeholder="Inital Balance"
                 />
