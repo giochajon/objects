@@ -41,6 +41,16 @@ class LinkedList {
 
 
     insertNode = (NewNode) => {
+        /*this.current = this.last
+        NewNode.previousNode = this.current
+        this.current.forwardNode = NewNode
+        this.last = NewNode
+        this.current = NewNode
+        this.numberOfNodes++
+        this.totalAmmount += Number(NewNode.ammount)*/
+
+        //this.current = this.last
+        if (this.current === this.last) {
         this.current = this.last
         NewNode.previousNode = this.current
         this.current.forwardNode = NewNode
@@ -48,7 +58,20 @@ class LinkedList {
         this.current = NewNode
         this.numberOfNodes++
         this.totalAmmount += Number(NewNode.ammount)
-    }
+       }
+
+       else 
+        {
+        
+        NewNode.previousNode = this.current
+        NewNode.forwardNode = this.current.forwardNode
+        this.current.forwardNode = NewNode 
+        //this.current = NewNode
+        this.numberOfNodes++
+        this.totalAmmount += Number(NewNode.ammount)
+       }        
+
+   }
 
     insertNodeBeginning = (NewNode) => {
         this.first.previousNode = NewNode;
