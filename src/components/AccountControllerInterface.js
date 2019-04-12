@@ -55,7 +55,7 @@ class AccountInterface extends React.Component {
     depositAccount = (who) => {
         let amount = prompt("enter the amount to deposit")
         const arr = this.controller.accountList;
-          arr.forEach((element) => {if (element.name === who) {element.deposit(amount)}});
+        arr.forEach((element) => { if (element.name === who) { element.deposit(amount) } });
         this.controller.accountList = arr;
         this.controller.chkLowHigh();
         let a = this.state.clicks
@@ -65,7 +65,7 @@ class AccountInterface extends React.Component {
     withdrawAccount = (who) => {
         let amount = prompt("enter the amount to withdraw")
         const arr = this.controller.accountList;
-          arr.forEach((element) => {if (element.name === who) {element.withdrawl(amount)}});
+        arr.forEach((element) => { if (element.name === who) { element.withdrawl(amount) } });
         this.controller.accountList = arr;
         this.controller.chkLowHigh();
         let a = this.state.clicks

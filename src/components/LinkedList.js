@@ -51,27 +51,24 @@ class LinkedList {
 
         //this.current = this.last
         if (this.current === this.last) {
-        this.current = this.last
-        NewNode.previousNode = this.current
-        this.current.forwardNode = NewNode
-        this.last = NewNode
-        this.current = NewNode
-        this.numberOfNodes++
-        this.totalAmmount += Number(NewNode.ammount)
-       }
+            this.current = this.last
+            NewNode.previousNode = this.current
+            this.current.forwardNode = NewNode
+            this.last = NewNode
+            this.current = NewNode
+            this.numberOfNodes++
+            this.totalAmmount += Number(NewNode.ammount)
+        } else {
 
-       else 
-        {
-        
-        NewNode.previousNode = this.current
-        NewNode.forwardNode = this.current.forwardNode
-        this.current.forwardNode = NewNode 
-        //this.current = NewNode
-        this.numberOfNodes++
-        this.totalAmmount += Number(NewNode.ammount)
-       }        
+            NewNode.previousNode = this.current
+            NewNode.forwardNode = this.current.forwardNode
+            this.current.forwardNode = NewNode
+            //this.current = NewNode
+            this.numberOfNodes++
+            this.totalAmmount += Number(NewNode.ammount)
+        }
 
-   }
+    }
 
     insertNodeBeginning = (NewNode) => {
         this.first.previousNode = NewNode;
@@ -124,7 +121,7 @@ class LinkedList {
             this.movePrev()
             this.last = this.current;
 
-        } else if ((this.current !== this.last)||(this.current !== this.first)) {
+        } else if ((this.current !== this.last) || (this.current !== this.first)) {
             this.totalAmmount -= this.current.ammount;
             this.numberOfNodes--;
             this.current.previousNode.forwardNode = this.current.forwardNode
