@@ -1,3 +1,4 @@
+// eslint-disable-next-line 
 import node from "./Node.js";
 
 class LinkedList {

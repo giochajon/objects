@@ -6,6 +6,7 @@ import AccountInterface from "./AccountInterfaceOld"
 import AccountController from "./AccountControllerInterface"
 import CitiesComp from "./CitiesComp"
 import LinkedListInterface from "./LinkedListInterface"
+import StructureComponent from "./StructureComponent"
 
 function Square(props) {
     return (
@@ -20,7 +21,7 @@ class Menu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            squares: Array(5).fill(null),
+            squares: Array(6).fill(null),
             itemSelected: true
         };
     }
@@ -65,6 +66,13 @@ class Menu extends React.Component {
                 this.setState({ itemSelected: <LinkedListInterface /> });
                 break;
 
+            case 6:
+                this.setState({ itemSelected: <div>
+                    <StructureComponent title="Queue (FIFO)" tipo="Fifo" />
+                    <StructureComponent title="Stack (LIFO)" tipo="Lifo" />
+                                             </div> });
+                break;
+
             default:
                 this.setState({
                     itemSelected: (
@@ -100,6 +108,7 @@ class Menu extends React.Component {
           {this.renderMenuItem(3)}
           {this.renderMenuItem(4)}
           {this.renderMenuItem(5)}
+          {this.renderMenuItem(6)}
         </div>
         {status}
       </div>

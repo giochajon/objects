@@ -25,18 +25,23 @@ class City {
         switch (true) {
             case (x < 100):
                 return "Hamlet";
+                // eslint-disable-next-line 
                 break;
             case (x < 1000):
                 return "Village";
+                // eslint-disable-next-line 
                 break;
             case (x < 20000):
                 return "Town";
+                // eslint-disable-next-line 
                 break;
             case (x < 100000):
                 return "Large Town";
+                // eslint-disable-next-line 
                 break;
             default:
                 return "City";
+                // eslint-disable-next-line 
                 break;
         }
     }

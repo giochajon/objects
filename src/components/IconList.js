@@ -4,7 +4,8 @@ import MdHeart from "react-ionicons/lib/MdHeart";
 import IosCog from "react-ionicons/lib/IosCog";
 import IosRainy from "react-ionicons/lib/IosRainy";
 import LogoNodejs from "react-ionicons/lib/LogoNodejs";
-
+import MdInfinite from "react-ionicons/lib/MdInfinite";
+import MdLink from "react-ionicons/lib/MdLink";
 const IconList = [
     {
         id: "0",
@@ -28,7 +29,11 @@ const IconList = [
     },
      {
         id: "5",
-        icon: <LogoNodejs beat={true} fontSize="80px" color="purple" />
+        icon: <MdLink rotate={true} fontSize="80px" color="purple" />
+    },
+     {
+        id: "6",
+        icon: <MdInfinite beat={true} fontSize="80px" color="white" />
     }
 
 ]
