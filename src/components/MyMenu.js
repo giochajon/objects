@@ -22,9 +22,14 @@ class Menu extends React.Component {
         super(props);
         this.state = {
             squares: Array(6).fill(null),
-            itemSelected: true
+            itemSelected: <img src={logo} className="App-logo" alt="logo" />
+            
         };
+        
     }
+
+
+
 
     handleClick(i) {
 
@@ -92,6 +97,7 @@ class Menu extends React.Component {
         value={this.state.squares[i]}
         ico={IconList[i].icon}
         onClick={() => this.handleClick(i)}
+        //onMouseOver={() => this.touched("Picture") }
       />
         );
     }
