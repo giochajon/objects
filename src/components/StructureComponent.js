@@ -7,46 +7,46 @@ class StructureComponent extends React.Component {
         super(props);
 
         this.state = {
-        textBoxValue :"",
-        contents: [],
-        lastValue :null
+            textBoxValue: "",
+            contents: [],
+            lastValue: null
         }
 
 
-       this.props.tipo === "Fifo" ? this.structure = new Queue() : this.structure = new Stack()
+        this.props.tipo === "Fifo" ? this.structure = new Queue() : this.structure = new Stack()
 
-        
+
 
     }
 
-    
-  
+
+
     handleNewValue = (event) => {
         this.setState({ textBoxValue: event.target.value });
     }
 
-    addValue=() => {
-        
+    addValue = () => {
+
         this.structure.addElement(this.state.textBoxValue);
         const x = this.structure.showElements()
-         this.setState({ contents: x });
-         this.setState({ textBoxValue: "" });
-
-
-    } 
-
-
-pullValue=() => {
-        
-        const a = this.structure.serveElement();
-        const x = this.structure.showElements()
-         this.setState({ contents: x });
-         this.setState({ lastValue: "Last Value Pulled:"+a });
+        this.setState({ contents: x });
+        this.setState({ textBoxValue: "" });
 
 
     }
 
-show(){
+
+    pullValue = () => {
+
+        const a = this.structure.serveElement();
+        const x = this.structure.showElements()
+        this.setState({ contents: x });
+        this.setState({ lastValue: "Last Value Pulled:" + a });
+
+
+    }
+
+    show() {
         let lista = [];
 
         let datarray = this.state.contents
@@ -56,16 +56,16 @@ show(){
             lista.push(<div key = {element}>  {element} </div>)
 
         })
-            
-          if  (this.state.lastValue) { lista.unshift(<h3 key = "meaw"> Last value Pulled =  {this.state.lastValue} </h3>  )}
+
+        if (this.state.lastValue) { lista.unshift(<h3 key = "meaw"> Last value Pulled =  {this.state.lastValue} </h3>) }
         return lista
     }
 
     render() {
 
-   
+
         return (
-        <div> <h2>{this.props.title}</h2>
+            <div> <h2>{this.props.title}</h2>
         <button onClick={() => { this.addValue() }}>Add Element</button>
 
 

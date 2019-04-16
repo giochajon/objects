@@ -1,13 +1,11 @@
-
-
 class Stack {
 
     constructor() {
         this.contents = []
-     }
+    }
 
-     addElement = (item) => {
-        this.contents.push (item)
+    addElement = (item) => {
+        this.contents.push(item)
     }
 
 
@@ -15,8 +13,8 @@ class Stack {
         return this.contents.pop()
     }
 
-    showElements(){
-    return this.contents;
+    showElements() {
+        return this.contents;
 
     }
 

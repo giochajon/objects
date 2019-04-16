@@ -2,10 +2,10 @@ class Queue {
 
     constructor() {
         this.contents = []
-     }
+    }
 
-     addElement = (item) => {
-        this.contents.push (item)
+    addElement = (item) => {
+        this.contents.push(item)
     }
 
 
@@ -13,8 +13,8 @@ class Queue {
         return this.contents.shift()
     }
 
-    showElements(){
-    return this.contents;
+    showElements() {
+        return this.contents;
 
     }
 

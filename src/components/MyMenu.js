@@ -23,9 +23,9 @@ class Menu extends React.Component {
         this.state = {
             squares: Array(6).fill(null),
             itemSelected: <img src={logo} className="App-logo" alt="logo" />
-            
+
         };
-        
+
     }
 
 
