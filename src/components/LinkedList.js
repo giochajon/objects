@@ -29,10 +29,10 @@ class LinkedList {
         this.moveFirst();
         for (let fun = 1; fun < this.numberOfNodes; fun++) {
             if (this.current.subject !== curr) {
-                console.log("NO");
+            //    console.log("NO");
                 this.moveNext()
             } else {
-                console.log("yes");
+              //  console.log("yes");
                 break;
             }
         }

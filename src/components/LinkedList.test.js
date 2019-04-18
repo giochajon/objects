@@ -65,6 +65,27 @@ test("testing Linked List  class & methods: ", () => {
     expect(obj.current.previousNode.subject).toBe("Alex");
     expect(obj.numberOfNodes).toBe(5);
     expect(obj.totalAmmount).toBe(46);
+    const arr = obj.toArray();
+    expect(arr[0]).toBe("Subject: Peter Amount: 1")
+    obj.moveFirst()
+    obj.moveNext()
+    const arr2 = obj.toArray();
+    expect(arr2[0]).toBe("Subject: Peter Amount: 1")
+    obj.deleteNode()
+    const arr3 = obj.toArray();
+    expect(arr3[0]).toBe("Subject: Peter Amount: 1")
+    obj.moveLast()
+    obj.deleteNode()
+    
+    expect(arr3[3]).toBe("Subject: Frank Amount: 10")
+    obj.moveFirst()
+    obj.deleteNode()
+    const arr4 = obj.toArray();
+    expect(arr4[0]).toBe("Subject: Alex Amount: 20")
 
+    obj.moveFirst()
+    const h = new Node("Karl", 5);
+    obj.insertNode(h);
+    expect(obj.current.subject).toBe("Alex");
 
 });
