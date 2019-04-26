@@ -34,6 +34,10 @@ const IconList = [
      {
         id: "6",
         icon: <MdInfinite beat={true} fontSize="80px" color="white" />
+    },
+         {
+        id: "7",
+        icon: <IosCog beat={true} fontSize="80px" color="orange" />
     }
 
 ]

@@ -7,6 +7,7 @@ import AccountController from "./AccountControllerInterface"
 import CitiesComp from "./CitiesComp"
 import LinkedListInterface from "./LinkedListInterface"
 import StructureComponent from "./StructureComponent"
+import FlaskExerciseRender from "./FlaskExerciseRender"
 
 function Square(props) {
     return (
@@ -77,6 +78,9 @@ class Menu extends React.Component {
                     <StructureComponent title="Stack (LIFO)" tipo="Lifo" />
                                              </div> });
                 break;
+            case 7:
+                this.setState({ itemSelected: <FlaskExerciseRender /> });
+                break;
 
             default:
                 this.setState({
@@ -115,6 +119,7 @@ class Menu extends React.Component {
           {this.renderMenuItem(4)}
           {this.renderMenuItem(5)}
           {this.renderMenuItem(6)}
+          {this.renderMenuItem(7)}
         </div>
         {status}
       </div>
