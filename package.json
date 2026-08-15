@@ -27,7 +27,11 @@
     "underscore": "^1.13.8",
     "@tootallnate/once": "^2.0.1",
     "merge": "^2.1.1",
-    "micromatch": "^4.0.8"
+    "micromatch": "^4.0.8",
+    "postcss": "^8.5.23",
+    "uuid": "^13.0.1",
+    "serialize-javascript": "^7.0.5",
+    "svgo": "^2.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
